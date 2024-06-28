@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="control-group">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Name of the product"
+            required="required" data-validation-required-message="Please enter the name of the product" />
+        <p class="help-block text-danger"></p>
+    </div>
+
+    <div class="control-group">
+        <input type="number" class="form-control" id="price" name="price" placeholder="Price"
+            required="required" data-validation-required-message="Please enter its price" />
+        <p class="help-block text-danger"></p>
+    </div>
+
+    <div class="control-group">
+        <input type="text" class="form-control" id="price_type" name="price_type" placeholder="Price Type -> $,SUM,EU"
+            required="required" data-validation-required-message="Please enter its price" />
+        <p class="help-block text-danger"></p>
+    </div>
+
+    <div class="control-group">
+        <textarea class="form-control" rows="8" id="description" name="description" placeholder="Description"
+            required="required" data-validation-required-message="Please write the description"></textarea>
+        <p class="help-block text-danger"></p>
+    </div>
+
+    <div class="control-group">
+        <input type="file" class="form-control" id="image" name="image" required="required"
+            data-validation-required-message="Please upload an image of the product" />
+        <p class="help-block text-danger"></p>
+    </div>
+
+    <div>
+        <button class="btn btn-primary py-2 px-4" type="submit" id="Update">Update</button>
+    </div>
+</form>
+{% endblock %}
